@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<!--
+  GitHub Pages serves this page for any unknown path. The site used to live
+  under /knowledge-catalog/, so old links get forwarded to the same path at
+  the root before the reader sees anything.
+-->
+<Base title="Page not found">
+  <script is:inline>
+    if (location.pathname.startsWith('/knowledge-catalog/')) {
+      location.replace(
+        location.pathname.slice('/knowledge-catalog'.length) + location.search + location.hash
+      );
+    }
+  </script>
+  <div class="py-16 text-center">
+    <h1 class="text-2xl font-semibold">Page not found</h1>
+    <p class="text-muted-foreground mt-3">
+      This page does not exist. <a href="/" class="underline underline-offset-4">Back to the catalog</a>.
+    </p>
+  </div>
+</Base>

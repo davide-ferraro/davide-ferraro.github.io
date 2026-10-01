@@ -7,7 +7,7 @@ import react from '@astrojs/react';
 
 import tailwindcss from '@tailwindcss/vite';
 
-const BASE = '/knowledge-catalog';
+const BASE = '/';
 
 export default defineConfig({
   site: 'https://davide-ferraro.github.io',
